@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Data - Vehicle Insurance Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar (if logged in) -->
+    <aside class="sidebar" id="sidebar" style="display: none;">
+      <div class="sidebar-header">
+        <h1>Insurance Portal</h1>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="create-policy.html" class="nav-item">Create Policy</a>
+        <a href="view-policies.html" class="nav-item">View Policies</a>
+        <a href="data.html" class="nav-item active">Test Data</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-details">
+            <h4 id="userName"></h4>
+            <p id="userBranch"></p>
+          </div>
+        </div>
+        <button onclick="handleLogout()" class="btn btn-secondary btn-block">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent" style="margin-left: 0;">
+      <div class="page-header">
+        <h2>Test Data & Documentation</h2>
+        <p>All test credentials, data structures, and functional requirements</p>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Testing Platform:</strong> This page contains all the information needed to test the Vehicle Insurance Platform. Use the credentials below to login and explore the application.
+      </div>
+
+      <!-- Login Credentials -->
+      <div class="data-section">
+        <div class="card">
+          <div class="card-header">
+            <h3>🔐 Test Login Credentials</h3>
+          </div>
+
+          <div class="credentials-grid">
+            <div class="credential-card">
+              <button class="btn btn-primary copy-btn" onclick="copyCredentials('dealer1', 'password123')">Copy</button>
+              <h4>Primary Dealer</h4>
+              <div class="credential-item">
+                <span class="credential-label">Username:</span>
+                <span class="credential-value">dealer1</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Password:</span>
+                <span class="credential-value">password123</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Name:</span>
+                <span class="credential-value">John Smith</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Branch:</span>
+                <span class="credential-value">Mumbai Central</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <button class="btn btn-primary copy-btn" onclick="copyCredentials('dealer2', 'test@456')">Copy</button>
+              <h4>Secondary Dealer</h4>
+              <div class="credential-item">
+                <span class="credential-label">Username:</span>
+                <span class="credential-value">dealer2</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Password:</span>
+                <span class="credential-value">test@456</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Name:</span>
+                <span class="credential-value">Sarah Johnson</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Branch:</span>
+                <span class="credential-value">Delhi North</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <button class="btn btn-primary copy-btn" onclick="copyCredentials('admin', 'admin123')">Copy</button>
+              <h4>Admin User</h4>
+              <div class="credential-item">
+                <span class="credential-label">Username:</span>
+                <span class="credential-value">admin</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Password:</span>
+                <span class="credential-value">admin123</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Name:</span>
+                <span class="credential-value">Admin User</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Branch:</span>
+                <span class="credential-value">Head Office</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <button class="btn btn-primary copy-btn" onclick="copyCredentials('testuser', 'test123')">Copy</button>
+              <h4>Test Account</h4>
+              <div class="credential-item">
+                <span class="credential-label">Username:</span>
+                <span class="credential-value">testuser</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Password:</span>
+                <span class="credential-value">test123</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Name:</span>
+                <span class="credential-value">Test Kumar</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Branch:</span>
+                <span class="credential-value">Bangalore South</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <button class="btn btn-primary copy-btn" onclick="copyCredentials('demo', 'demo123')">Copy</button>
+              <h4>Demo Account</h4>
+              <div class="credential-item">
+                <span class="credential-label">Username:</span>
+                <span class="credential-value">demo</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Password:</span>
+                <span class="credential-value">demo123</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Name:</span>
+                <span class="credential-value">Demo Agent</span>
+              </div>
+              <div class="credential-item">
+                <span class="credential-label">Branch:</span>
+                <span class="credential-value">Chennai East</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <a href="index.html" class="btn btn-primary">Go to Login Page</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Functional Requirements -->
+      <div class="data-section">
+        <div class="card">
+          <div class="card-header">
+            <h3>📋 Functional Requirements</h3>
+          </div>
+
+          <h4 style="margin-bottom: 15px;">Features Available for Testing:</h4>
+
+          <div style="line-height: 1.8;">
+            <h5 style="color: var(--primary); margin-top: 20px;">1. Authentication</h5>
+            <ul style="margin-left: 25px;">
+              <li>Login with username and password</li>
+              <li>Form validation (required fields)</li>
+              <li>Simulated API delay (1000ms)</li>
+              <li>Invalid credential error handling</li>
+              <li>Session management via localStorage</li>
+              <li>Logout functionality</li>
+            </ul>
+
+            <h5 style="color: var(--primary); margin-top: 20px;">2. Dashboard</h5>
+            <ul style="margin-left: 25px;">
+              <li>Policy statistics (Total, Active, Pending, Expired)</li>
+              <li>Recent policies table</li>
+              <li>Quick action buttons</li>
+              <li>User profile display</li>
+            </ul>
+
+            <h5 style="color: var(--primary); margin-top: 20px;">3. Create Policy</h5>
+            <ul style="margin-left: 25px;">
+              <li><strong>Text inputs:</strong> Name, Model, Address</li>
+              <li><strong>Email validation:</strong> Email field with format check</li>
+              <li><strong>Phone validation:</strong> 10-digit phone number</li>
+              <li><strong>Number inputs:</strong> Sum assured, Premium, Year</li>
+              <li><strong>Date inputs:</strong> DOB, Policy start date with validation</li>
+              <li><strong>Dropdowns:</strong> State, Vehicle type, Vehicle make</li>
+              <li><strong>Radio buttons:</strong> Coverage type, Payment frequency</li>
+              <li><strong>Checkboxes:</strong> Add-ons (conditional based on coverage)</li>
+              <li><strong>Conditional fields:</strong> Add-ons appear only for comprehensive coverage</li>
+              <li><strong>Mandatory fields:</strong> Marked with asterisk (*)</li>
+              <li><strong>Auto-generated:</strong> Policy number</li>
+              <li><strong>Dynamic dropdown:</strong> Vehicle make based on vehicle type</li>
+              <li><strong>Validation rules:</strong> Age 18+, future dates, vehicle number format</li>
+              <li><strong>Simulated delay:</strong> 1500ms save operation</li>
+              <li><strong>Error simulation:</strong> 5% random failure rate</li>
+            </ul>
+
+            <h5 style="color: var(--primary); margin-top: 20px;">4. View Policies</h5>
+            <ul style="margin-left: 25px;">
+              <li>Search by policy number, name, vehicle number</li>
+              <li>Filter by status and vehicle type</li>
+              <li>Sortable columns (ascending/descending)</li>
+              <li>View detailed policy information in modal</li>
+              <li>Export filtered data as JSON</li>
+              <li>Simulated search delay (300ms)</li>
+            </ul>
+
+            <h5 style="color: var(--primary); margin-top: 20px;">5. Test Data Page</h5>
+            <ul style="margin-left: 25px;">
+              <li>All login credentials</li>
+              <li>Copy to clipboard functionality</li>
+              <li>Complete API documentation</li>
+              <li>Sample test scenarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Field Types -->
+      <div class="data-section">
+        <div class="card">
+          <div class="card-header">
+            <h3>📝 Form Field Types & Validations</h3>
+          </div>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Field Name</th>
+                  <th>Type</th>
+                  <th>Validation</th>
+                  <th>Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Policyholder Name</td>
+                  <td>Text</td>
+                  <td>Not empty</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>Email</td>
+                  <td>Valid email format</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td>Tel</td>
+                  <td>10 digits only</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td>Date</td>
+                  <td>Past date, min age 18</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>Textarea</td>
+                  <td>Not empty</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>State</td>
+                  <td>Dropdown</td>
+                  <td>Must select from list</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Vehicle Type</td>
+                  <td>Dropdown</td>
+                  <td>Car, Bike, or Commercial</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Vehicle Make</td>
+                  <td>Dynamic Dropdown</td>
+                  <td>Based on vehicle type</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Vehicle Number</td>
+                  <td>Text</td>
+                  <td>Format: AA00AA0000</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Manufacture Year</td>
+                  <td>Number</td>
+                  <td>Range: 1990-2025</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Coverage Type</td>
+                  <td>Radio</td>
+                  <td>Third-party or Comprehensive</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Add-ons</td>
+                  <td>Checkbox</td>
+                  <td>Conditional (only for comprehensive)</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td>Sum Assured</td>
+                  <td>Number</td>
+                  <td>Minimum: ₹50,000</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Premium</td>
+                  <td>Number</td>
+                  <td>Minimum: ₹1,000</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Payment Frequency</td>
+                  <td>Radio</td>
+                  <td>Monthly, Quarterly, or Yearly</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Policy Start Date</td>
+                  <td>Date</td>
+                  <td>Today or future date</td>
+                  <td>✅</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Scenarios -->
+      <div class="data-section">
+        <div class="card">
+          <div class="card-header">
+            <h3>🧪 Recommended Test Scenarios</h3>
+          </div>
+
+          <div style="line-height: 1.8;">
+            <h4 style="margin-bottom: 10px;">Happy Path Testing:</h4>
+            <ol style="margin-left: 25px;">
+              <li>Login with valid credentials (dealer1/password123)</li>
+              <li>View dashboard and verify statistics</li>
+              <li>Create a new car policy with comprehensive coverage</li>
+              <li>Add multiple add-ons</li>
+              <li>Submit and verify success message</li>
+              <li>Navigate to View Policies and find the new policy</li>
+              <li>Use search and filters</li>
+              <li>Export data</li>
+              <li>Logout successfully</li>
+            </ol>
+
+            <h4 style="margin-top: 30px; margin-bottom: 10px;">Validation Testing:</h4>
+            <ol style="margin-left: 25px;">
+              <li>Try login with invalid credentials</li>
+              <li>Submit policy form with empty required fields</li>
+              <li>Enter invalid email format (test@test)</li>
+              <li>Enter phone number with less than 10 digits</li>
+              <li>Enter DOB for person under 18 years</li>
+              <li>Enter invalid vehicle number format</li>
+              <li>Enter sum assured below ₹50,000</li>
+              <li>Select policy start date in the past</li>
+              <li>Try to access protected pages without login</li>
+            </ol>
+
+            <h4 style="margin-top: 30px; margin-bottom: 10px;">Dynamic Behavior Testing:</h4>
+            <ol style="margin-left: 25px;">
+              <li>Change vehicle type and observe vehicle make dropdown update</li>
+              <li>Select third-party coverage and verify add-ons are hidden</li>
+              <li>Select comprehensive coverage and verify add-ons appear</li>
+              <li>Sort policies by different columns</li>
+              <li>Filter by status and vehicle type simultaneously</li>
+              <li>Search while filters are active</li>
+            </ol>
+
+            <h4 style="margin-top: 30px; margin-bottom: 10px;">Performance Testing:</h4>
+            <ol style="margin-left: 25px;">
+              <li>Observe loading spinners during login (1000ms delay)</li>
+              <li>Observe loading spinner during policy creation (1500ms delay)</li>
+              <li>Observe search debounce (300ms delay)</li>
+              <li>Test random 5% error rate by creating multiple policies</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="data-section">
+        <div class="card">
+          <div class="card-header">
+            <h3>⚙️ Technical Details</h3>
+          </div>
+
+          <div style="line-height: 1.8;">
+            <h4>Technology Stack:</h4>
+            <ul style="margin-left: 25px;">
+              <li>Frontend: Plain HTML, CSS, JavaScript (ES6+)</li>
+              <li>Storage: Browser localStorage</li>
+              <li>Deployment: GitHub Pages compatible (static files)</li>
+              <li>No build process required</li>
+            </ul>
+
+            <h4 style="margin-top: 20px;">Simulated Delays:</h4>
+            <ul style="margin-left: 25px;">
+              <li>Login: 1000ms</li>
+              <li>Policy creation: 1500ms</li>
+              <li>Policy list load: 800ms</li>
+              <li>Search/filter: 300ms</li>
+            </ul>
+
+            <h4 style="margin-top: 20px;">Data Storage:</h4>
+            <ul style="margin-left: 25px;">
+              <li>localStorage key: <code>dealers</code> - All dealer accounts</li>
+              <li>localStorage key: <code>policies</code> - All policies</li>
+              <li>localStorage key: <code>currentSession</code> - Active session</li>
+            </ul>
+
+            <h4 style="margin-top: 20px;">Pre-loaded Data:</h4>
+            <ul style="margin-left: 25px;">
+              <li>5 dealer accounts</li>
+              <li>8 sample policies across different dealers</li>
+              <li>Multiple statuses: Active, Pending, Expired, Cancelled</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="card">
+        <div class="card-header">
+          <h3>🔗 Quick Links</h3>
+        </div>
+        <div class="btn-group">
+          <a href="index.html" class="btn btn-primary">Login Page</a>
+          <a href="dashboard.html" class="btn btn-outline">Dashboard</a>
+          <a href="create-policy.html" class="btn btn-outline">Create Policy</a>
+          <a href="view-policies.html" class="btn btn-outline">View Policies</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Check if user is logged in
+    if (auth.isAuthenticated()) {
+      document.getElementById('sidebar').style.display = 'flex';
+      document.getElementById('mainContent').style.marginLeft = '260px';
+
+      const user = auth.getCurrentUser();
+      document.getElementById('userName').textContent = user.name;
+      document.getElementById('userBranch').textContent = user.branch;
+      document.getElementById('userAvatar').textContent = user.name.charAt(0).toUpperCase();
+    }
+
+    function handleLogout() {
+      if (confirm('Are you sure you want to logout?')) {
+        auth.logout();
+        showToast('Logged out successfully', 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 500);
+      }
+    }
+
+    function copyCredentials(username, password) {
+      const text = `Username: ${username}\nPassword: ${password}`;
+      copyToClipboard(text);
+    }
+  </script>
+</body>
+</html>

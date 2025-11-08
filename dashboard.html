@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Vehicle Insurance Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Insurance Portal</h1>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active">Dashboard</a>
+        <a href="create-policy.html" class="nav-item">Create Policy</a>
+        <a href="view-policies.html" class="nav-item">View Policies</a>
+        <a href="data.html" class="nav-item">Test Data</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-details">
+            <h4 id="userName"></h4>
+            <p id="userBranch"></p>
+          </div>
+        </div>
+        <button onclick="handleLogout()" class="btn btn-secondary btn-block">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h2>Dashboard</h2>
+        <p>Welcome back! Here's your policy overview</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Policies</div>
+          <div class="stat-value" id="totalPolicies">0</div>
+        </div>
+
+        <div class="stat-card success">
+          <div class="stat-label">Active Policies</div>
+          <div class="stat-value" id="activePolicies">0</div>
+        </div>
+
+        <div class="stat-card warning">
+          <div class="stat-label">Pending Policies</div>
+          <div class="stat-value" id="pendingPolicies">0</div>
+        </div>
+
+        <div class="stat-card danger">
+          <div class="stat-label">Expired Policies</div>
+          <div class="stat-value" id="expiredPolicies">0</div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="btn-group">
+          <a href="create-policy.html" class="btn btn-primary">Create New Policy</a>
+          <a href="view-policies.html" class="btn btn-outline">View All Policies</a>
+        </div>
+      </div>
+
+      <!-- Recent Policies -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Policies</h3>
+        </div>
+        <div id="recentPoliciesContainer">
+          <div class="table-container">
+            <table class="table" id="recentPoliciesTable">
+              <thead>
+                <tr>
+                  <th>Policy Number</th>
+                  <th>Policyholder</th>
+                  <th>Vehicle Type</th>
+                  <th>Coverage</th>
+                  <th>Premium</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody id="recentPoliciesBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Load user info
+    function loadUserInfo() {
+      const user = auth.getCurrentUser();
+      if (!user) return;
+
+      document.getElementById('userName').textContent = user.name;
+      document.getElementById('userBranch').textContent = user.branch;
+
+      // Set avatar initial
+      const initial = user.name.charAt(0).toUpperCase();
+      document.getElementById('userAvatar').textContent = initial;
+    }
+
+    // Load stats
+    async function loadStats() {
+      showLoading();
+      await simulateDelay(800);
+
+      const stats = getPolicyStats();
+
+      document.getElementById('totalPolicies').textContent = stats.total;
+      document.getElementById('activePolicies').textContent = stats.active;
+      document.getElementById('pendingPolicies').textContent = stats.pending;
+      document.getElementById('expiredPolicies').textContent = stats.expired;
+
+      hideLoading();
+    }
+
+    // Load recent policies
+    function loadRecentPolicies() {
+      const policies = getDealerPolicies();
+      const recentPolicies = policies
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 5);
+
+      const tbody = document.getElementById('recentPoliciesBody');
+
+      if (recentPolicies.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" class="empty-state">
+              <h3>No policies found</h3>
+              <p>Get started by creating your first policy</p>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = recentPolicies.map(policy => `
+        <tr>
+          <td>${policy.policyNumber}</td>
+          <td>${policy.policyholderName}</td>
+          <td style="text-transform: capitalize;">${policy.vehicleType}</td>
+          <td style="text-transform: capitalize;">${policy.coverageType.replace('-', ' ')}</td>
+          <td>${formatCurrency(policy.premium)}</td>
+          <td>
+            <span class="badge badge-${policy.status.toLowerCase()}">${policy.status}</span>
+          </td>
+          <td>${formatDate(policy.createdAt)}</td>
+        </tr>
+      `).join('');
+    }
+
+    // Logout handler
+    function handleLogout() {
+      if (confirm('Are you sure you want to logout?')) {
+        auth.logout();
+        showToast('Logged out successfully', 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 500);
+      }
+    }
+
+    // Initialize
+    loadUserInfo();
+    loadStats();
+    loadRecentPolicies();
+  </script>
+</body>
+</html>
