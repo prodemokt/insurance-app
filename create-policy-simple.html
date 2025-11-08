@@ -7,39 +7,31 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Mobile Menu Toggle -->
-  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-  <!-- Mobile Overlay -->
-  <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
-
-  <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h1>Insurance Portal</h1>
-      </div>
-
-      <nav class="sidebar-nav">
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="dashboard.html" class="nav-brand">Insurance Portal</a>
+      <div class="nav-links">
         <a href="dashboard.html" class="nav-item">Dashboard</a>
         <a href="create-policy-simple.html" class="nav-item active">Create Policy</a>
         <a href="view-policies.html" class="nav-item">View Policies</a>
-        <a href="data.html" class="nav-item">Test Data</a>
-      </nav>
-
-      <div class="sidebar-footer">
-        <div class="user-info">
-          <div class="user-avatar" id="userAvatar"></div>
-          <div class="user-details">
-            <h4 id="userName"></h4>
-            <p id="userBranch"></p>
-          </div>
-        </div>
-        <button onclick="handleLogout()" class="btn btn-secondary btn-block">Logout</button>
+        <a href="data.html" class="nav-item">Data</a>
       </div>
-    </aside>
+    </div>
+    <div class="nav-right">
+      <div class="user-info">
+        <div class="user-avatar" id="userAvatar"></div>
+        <div class="user-details">
+          <h4 id="userName"></h4>
+          <p id="userBranch"></p>
+        </div>
+      </div>
+      <button onclick="handleLogout()" class="btn btn-secondary logout-btn">Logout</button>
+    </div>
+  </nav>
 
-    <!-- Main Content -->
+  <!-- Main Content -->
+  <div class="app-container">
     <main class="main-content">
       <div class="page-header">
         <h2>Create New Policy (Simplified)</h2>
@@ -137,14 +129,6 @@
   <script src="js/utils.js"></script>
   <script src="js/auth.js"></script>
   <script>
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.querySelector('.mobile-overlay');
-      sidebar.classList.toggle('mobile-open');
-      overlay.classList.toggle('show');
-    }
-
     // Load user info
     function loadUserInfo() {
       const user = auth.getCurrentUser();
