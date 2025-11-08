@@ -1,46 +1,74 @@
 # Vehicle Insurance Platform - Testing Demo
 
-A lightweight, modern vehicle insurance dealer portal designed for testing automation tools. Features realistic form validation, simulated API delays, and comprehensive data management.
+A lightweight, modern, **fully responsive** vehicle insurance dealer portal designed for testing automation tools. Features **simplified forms**, realistic validation, simulated API delays, and comprehensive data management.
 
 ## 🚀 Features
 
-### Authentication
+### 📱 Fully Responsive Design
+- **Mobile-optimized** with hamburger menu
+- **Tablet-friendly** layout (768px+)
+- **Desktop-optimized** (1024px+)
+- Touch-friendly UI elements
+- Adaptive grid layouts
+- Smooth mobile navigation
+
+### 🔐 Authentication
 - Secure login with validation
 - Session management
 - Protected routes
 - 5 pre-configured test accounts
 
-### Dashboard
+### 📊 Dashboard
 - Real-time policy statistics
 - Recent policies overview
 - Quick action shortcuts
 - User profile display
+- **Responsive stats grid**
 
-### Policy Management
-- **Create Policy**: Comprehensive form with 15+ input types
+### 📝 Policy Management
+- **Simplified Form**: Quick policy creation with 8 essential fields
+- **Full Form**: Comprehensive version with 16+ fields (create-policy.html)
 - **View Policies**: Search, filter, sort, and export
 - **Policy Details**: Detailed view in modal
 - **Data Export**: JSON export functionality
+- **Mobile-friendly tables** with horizontal scroll
 
-### Form Field Types
-- Text inputs
-- Email validation
-- Phone number validation
-- Number inputs with range validation
-- Date pickers with constraints
-- Dropdowns (static and dynamic)
-- Radio buttons
-- Checkboxes
-- Conditional fields
-- Textarea
+### 🎯 Simplified Testing (Default Form)
+**Essential Fields Only** (create-policy-simple.html):
+1. Policyholder Name (text)
+2. Email (email validation)
+3. Phone (10-digit validation)
+4. Vehicle Type (dropdown)
+5. Vehicle Number (format validation)
+6. Coverage Type (radio buttons)
+7. Premium Amount (number with min validation)
 
-### Realistic Behaviors
+**Benefits:**
+- ✅ Faster testing cycles
+- ✅ Reduced complexity
+- ✅ Focus on core validations
+- ✅ Mobile-friendly single column
+
+### 🔧 Full Form Features (Advanced Testing)
+**16+ Input Types** (create-policy.html):
+- Text inputs, Email, Phone, Number, Date
+- Dropdowns (static & dynamic)
+- Radio buttons, Checkboxes
+- Conditional fields, Textarea
+- Auto-generated fields
+
+### ⚡ Realistic Behaviors
 - Simulated API delays (300ms - 1500ms)
 - Loading spinners
 - Toast notifications
 - Form validation with error messages
 - 5% random error simulation
 - Dynamic field population
+
+### 📱 Responsive Breakpoints
+- **Desktop**: 1024px+ (Full sidebar, multi-column)
+- **Tablet**: 768px-1024px (Hamburger menu, 2-column grid)
+- **Mobile**: <768px (Single column, collapsible menu)
 
 ## 📦 Installation & Setup
 

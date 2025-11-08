@@ -7,16 +7,22 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+
   <div class="app-container">
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h1>Insurance Portal</h1>
       </div>
 
       <nav class="sidebar-nav">
         <a href="dashboard.html" class="nav-item active">Dashboard</a>
-        <a href="create-policy.html" class="nav-item">Create Policy</a>
+        <a href="create-policy-simple.html" class="nav-item">Create Policy</a>
         <a href="view-policies.html" class="nav-item">View Policies</a>
         <a href="data.html" class="nav-item">Test Data</a>
       </nav>
@@ -69,7 +75,7 @@
           <h3>Quick Actions</h3>
         </div>
         <div class="btn-group">
-          <a href="create-policy.html" class="btn btn-primary">Create New Policy</a>
+          <a href="create-policy-simple.html" class="btn btn-primary">Create New Policy</a>
           <a href="view-policies.html" class="btn btn-outline">View All Policies</a>
         </div>
       </div>
@@ -111,6 +117,14 @@
   <script src="js/utils.js"></script>
   <script src="js/auth.js"></script>
   <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.querySelector('.mobile-overlay');
+      sidebar.classList.toggle('mobile-open');
+      overlay.classList.toggle('show');
+    }
+
     // Load user info
     function loadUserInfo() {
       const user = auth.getCurrentUser();

@@ -7,16 +7,22 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+
   <div class="app-container">
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h1>Insurance Portal</h1>
       </div>
 
       <nav class="sidebar-nav">
         <a href="dashboard.html" class="nav-item">Dashboard</a>
-        <a href="create-policy.html" class="nav-item">Create Policy</a>
+        <a href="create-policy-simple.html" class="nav-item">Create Policy</a>
         <a href="view-policies.html" class="nav-item active">View Policies</a>
         <a href="data.html" class="nav-item">Test Data</a>
       </nav>
