@@ -4,14 +4,6 @@ let allPolicies = [];
 let filteredPolicies = [];
 let currentSort = { field: 'createdAt', direction: 'desc' };
 
-// Mobile menu toggle
-function toggleMobileMenu() {
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.querySelector('.mobile-overlay');
-  sidebar.classList.toggle('mobile-open');
-  overlay.classList.toggle('show');
-}
-
 // Load user info
 function loadUserInfo() {
   const user = auth.getCurrentUser();

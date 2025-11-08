@@ -672,17 +672,6 @@ body {
   display: block;
 }
 
-/* Mobile Menu */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-sidebar);
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .stats-grid {
@@ -695,20 +684,22 @@ body {
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
   .nav-left {
     gap: 10px;
   }
 
+  .nav-item {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
   .user-details {
     display: none;
+  }
+
+  .logout-btn {
+    padding: 5px 10px;
+    font-size: 12px;
   }
 
   .main-content {
@@ -794,6 +785,15 @@ body {
   .form-select,
   .form-textarea {
     font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .nav-brand {
+    font-size: 14px;
+  }
+
+  .nav-item {
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }
 
